@@ -1,0 +1,19 @@
+{
+  "presets": [
+    "next/babel"
+  ],
+    "plugins": [
+      [
+        "@emotion",
+        {
+          "sourceMap": true
+        }
+      ],
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ]
+    ]
+}

@@ -1,0 +1,205 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@emotion",
+    "@typescript-eslint"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "airbnb"
+  ],
+  "settings": {
+    "import/resolver": {
+      // To allow resolution of aliased paths
+      "typescript": {},
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ],
+        "moduleDirectory": [
+          "node_modules",
+          "src/"
+        ]
+      }
+    }
+  },
+  "ignorePatterns": [
+    "src/types/generated/**"
+  ],
+  "rules": {
+    "import/extensions": "off",
+    // Bug of typescript parser for eslint — it doesn't understand usage of interfaces and types
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "all",
+        "ignoreRestSiblings": false,
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "@emotion/no-vanilla": "error",
+    "@emotion/pkg-renaming": "error",
+    "@emotion/syntax-preference": [
+      "warn",
+      "string"
+    ],
+    "react/prop-types": "off",
+    "react/jsx-filename-extension": "off",
+    "class-methods-use-this": "off",
+    "react/jsx-props-no-spreading": "off",
+    "consistent-return": "off",
+    "no-restricted-globals": "off",
+    "curly": [
+      "warn",
+      "all"
+    ],
+    "brace-style": [
+      "warn",
+      "1tbs",
+      {
+        "allowSingleLine": false
+      }
+    ],
+    "indent": [
+      "warn",
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "react/jsx-indent": [
+      "warn",
+      4
+    ],
+    "react/jsx-indent-props": [
+      "warn",
+      4
+    ],
+    // To allow use lodash from dev dependencies
+    "import/no-extraneous-dependencies": "off",
+    "max-len": [
+      "warn",
+      {
+        "code": 200
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "quotes": [
+      "warn",
+      "double",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "object-curly-spacing": [
+      "warn",
+      "always"
+    ],
+    "react/jsx-curly-spacing": [
+      "warn",
+      {
+        "when": "always",
+        "children": true
+      }
+    ],
+    "no-underscore-dangle": [
+      "warn",
+      {
+        "allowAfterThis": true,
+        "allow": [
+          "_id"
+        ]
+      }
+    ],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": [
+      "error"
+    ],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": [
+      "error"
+    ],
+    "comma-dangle": [
+      "warn",
+      {
+        "functions": "never",
+        "arrays": "always-multiline",
+        "objects": "always-multiline"
+      }
+    ],
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "no-param-reassign": "warn",
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "react/jsx-one-expression-per-line": [
+      "warn",
+      {
+        "allow": "single-child"
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": [
+            "nesting",
+            "id"
+          ]
+        }
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": [
+            "nesting",
+            "id"
+          ]
+        }
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.d.ts"],
+      "rules": {
+        "camelcase": "off"
+      }
+    }
+  ],
+  "globals": {
+    "jest": "readonly",
+    "describe": "readonly",
+    "it": "readonly",
+    "test": "readonly",
+    "expect": "readonly",
+    "JSX": "readonly"
+  }
+}
